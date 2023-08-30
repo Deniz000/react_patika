@@ -1,15 +1,3 @@
-import axios from 'axios'
+import getData from './app.js';
 
-async function getUser(userID){
-    try {
-       
-        const { data : user } = await axios.get(`https://jsonplaceholder.typicode.com/users/${userID}`);
-        const { data : post } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${userID}`);
-
-        console.log("Kullanıcı geldi",user);
-        console.log("Kullanıcının postu geldi ",post);
-        } catch (e) {
-        console.log(e);
-    }
-}
-getUser(1)
+console.log(getData(1));
