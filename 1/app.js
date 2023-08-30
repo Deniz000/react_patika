@@ -12,6 +12,4 @@ async function getUser(userID){
         console.log(e);
     }
 }
-getUser(1)
-
 export default getUser;
