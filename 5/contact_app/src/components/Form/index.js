@@ -20,7 +20,8 @@ function Form( {addContact, contacts} ) {
     if(form.fullname === "" || form.phone_number === ""){
       return false;
     }
-    addContact([...contacts, form])
+    addContact(form)
+    // addContact([...contacts, form])
 
   };
   return (
@@ -31,7 +32,7 @@ function Form( {addContact, contacts} ) {
       <div>
         <input name='phone_number' value={form.phone_number} placeholder='Phone Number' onChange={onChangeInput} />
       </div>
-      <div>
+      <div className='btn'>
         <button type='submit'>Add</button>
       </div>
     </form>
