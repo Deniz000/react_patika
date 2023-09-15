@@ -4,16 +4,18 @@ import { Button, Input, Form, Grid, Container } from 'semantic-ui-react'
 function TodoForm(props) {
     const [input, setInput] = useState('');
 
-    const handleChange = e => {
+    const handleChange = e => { // bu fonksiyon her güncellemede çalışır. 
         setInput(e.target.value);
     }
-    const handlerSumit = e => {
+    const handlerSumit = e => { // buysa yalnızca form submit ediliğinde çalışır. 
         e.preventDefault();
 
-        props.onSubmit({
+        props.onSubmit({  
+            // bu yeni bir nesne oluşturur ve DÖNER id Math'dan oluşur, text'de girilen input'da gelir (UseState)
             id: Math.floor(Math.random() * 10000),
             text: input
         });
+        //yani işlem burada aşlar TodoLis'te akar. Orda devam eder. 
 
         setInput('')
     }
