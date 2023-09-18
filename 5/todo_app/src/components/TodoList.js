@@ -33,6 +33,13 @@ export default function TodoList() {
         setTodos(removeArr)
     }
 
+    // const updateTodo = ( todoId, newValue) => {
+    //     if (!todo.text || /^\s*$/.test(todo.text)) { //ifade boşluk var mı yok mu kontrol eder
+    //         return
+    //     }
+
+    //     setTodos(prev => prev.map(item => (item.id == todoId ? newValue : item)))
+    // }
 
     return (
         <div>
@@ -47,7 +54,7 @@ export default function TodoList() {
                                 <Button key={i} icon='delete' className='delete-icon' onClick={() => removeTodo(todo.id)} />
                             </List.Content>
                             <List.Content floated='right'>
-                                <Button icon='edit' className='edit-icon' onClick={() => setTodos({id: todo.id, text: todo.text}) } />
+                                <Button icon='edit' className='edit-icon' />
                             </List.Content>
 
                             <List.Content>{todo.text}</List.Content>
