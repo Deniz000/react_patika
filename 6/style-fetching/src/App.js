@@ -1,6 +1,5 @@
 import './App.css';
-import A from './components/A';
-import B from './components/B';
+import Users from './components/Fetch/Users';
 
 function App() {
   return (
@@ -10,9 +9,12 @@ function App() {
           lorem ipsum dolor sit amet,
            consectetur adip
         </div> */}
+        {/* <A/>
+        <B/> */}
 
-        <A/>
-        <B/>
+        <br/>
+        <Users/>
+        
       </header>
     </div>
   );
