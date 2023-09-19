@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(249, 149, 113);
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+
+}
+a{
+background-color: antiquewhite;
+}
+h1{
+    font-size: 100px;
+}
+p{
+    font-size: 60px;
+}
+button{
+    margin: 0 50px;
+    padding: 15px 40px;
+    border: 1px solid #111;
+    background-color: rgb(249, 149, 113);
+    color: aliceblue;
+}
+button:hover{
+    background-color:aliceblue;
+    color:  rgb(249, 149, 113);
+}
