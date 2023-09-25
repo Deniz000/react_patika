@@ -1,20 +1,32 @@
 import {
     Link,
+    Routes,
+    Route,
+    useMatch
 } from "react-router-dom";
 import { useState, useEffect } from "react"
 import axios from 'axios';
+import User from "./User";
 
 function Users() {
     const [loading, setLoading] = useState(true);
     const [users, setUsers] = useState([]);
+    // const { path, url } = useMatch({});
 
-    useEffect(()=> {
+    const match = useMatch("/user");
+
+
+
+
+
+    useEffect(() => {
         axios('https://jsonplaceholder.typicode.com/users')
-        .then(response => setUsers(response.data))
-        .finally(()=> setLoading(false));
-    },[])
+            .then(response => setUsers(response.data))
+            .finally(() => setLoading(false));
+    }, [])
     return (
         <div>
+            <>
                 {loading && <div>Loading...</div>}
                 <ul>
                     {
@@ -25,6 +37,12 @@ function Users() {
                         ))
                     }
                 </ul>
+
+                <Routes>
+                    <Route exact path={'/'} />
+                    {/* <Route path={match.path} element={<User />} /> */}
+                </Routes>
+            </>
         </div>
     )
 }
