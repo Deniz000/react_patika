@@ -3,61 +3,22 @@ let reset = document.getElementById("reset");
 let buttons = document.querySelectorAll(".square");
 const easy = document.getElementById("easy");
 const hard = document.getElementById("hard");
+const result = document.getElementById("result");
 // const forHard = document.getElementById("forHard");
 
 
+let lastClickedButton = null;
 
-hard.addEventListener("click", () => {
-    document.querySelectorAll(".square").forEach(button => {
-        button.remove();
-    });
-    for (let i = 0; i < 6; i++) { // 6 yeni kare eklemek için döngüyü 6 kez çalıştırın
-        const newSquare = document.createElement("div");
-        newSquare.classList.add("square");
-        document.body.appendChild(newSquare).style.margin = "2px";
-
-        // Yeni kareleri rastgele renklendirin
-        let ran = r[Math.floor(Math.random() * r.length)];
-        newSquare.style.backgroundColor = ran;
-    }
-});
-easy.addEventListener("click", () => {
-    newRGB(3)
-    const listOfhex = r_g_b().hexaValues;
-    console.log(listOfhex)
-
-    document.querySelectorAll(".square").forEach(square => {
-        square.remove();
-    });
-    for (let i = 0; i < 3; i++) { // 3 yeni kare eklemek için döngüyü 3 kez çalıştırın
-        const newSquare = document.createElement("div");
-        newSquare.classList.add("square");
-        document.body.appendChild(newSquare).style.margin = "2px";
-
-
-        console.log(i)
-        for (let j = 0; j < 3; j++) {
-            r += listOfhex[i][j];
-            console.log(r);
-        }
-        newSquare.style.backgroundColor = r;
-        r = '#'
-    }
+hard.addEventListener("click", function(event){
+    lastClickedButton = event.target;
+    resetFunc(6)
+})
+easy.addEventListener("click",  function(event){
+    lastClickedButton = event.target;
+    resetFunc(3);
 })
 
 let r = '#'
-// for (let i = 0; i < buttons.length; i++) {
-//     let ran = r[Math.floor(Math.random() * r.length)];
-//     buttons[i].style.backgroundColor = ran;
-// }
-
-let renk = "";
-
-buttons.forEach(button => button.addEventListener("click", () => {
-    button.style.backgroundColor = renk;
-}));
-
-
 
 
 
@@ -65,7 +26,7 @@ function newRGB(number) {
     hexaValues = [];
     rgbValues = [];
     const listOfRGB = r_g_b(number).rgbValues;
-    let i = Math.floor(Math.random()*number);
+    let i = Math.floor(Math.random() * number);
     rgb.innerHTML = 'rgb(' + listOfRGB[i][0] + ', ' + listOfRGB[i][1] + ', ' + listOfRGB[i][2] + ')';
     console.log('rgb newRGB içinde ', listOfRGB);
 }
@@ -78,10 +39,46 @@ function rn() {
 let hexaValues = [];
 let rgbValues = [];
 
-reset.addEventListener("click", () => {
-    newRGB();
+reset.addEventListener("click", function() {
+    if(lastClickedButton === 'easy') { 
+        resetFunc(3)
+    }
+    else if(lastClickedButton === 'hard') {
+        resetFunc(6)
+    }
 })
+function resetFunc(units){
 
+    result.innerHTML = "<span style='font-size:50px;'>&#9203;</span>"
+    newRGB(units)
+    const listOfhex = r_g_b().hexaValues;
+    console.log(listOfhex)
+    document.querySelectorAll(".square").forEach(square => {
+        square.remove();
+    });
+    for (let i = 0; i < units; i++) { // 3 yeni kare eklemek için döngüyü 3 kez çalıştırın
+        const newSquare = document.createElement("div");
+        newSquare.classList.add("square");
+        document.body.appendChild(newSquare).style.margin = "2px";
+
+
+        console.log(i)
+        for (let j = 0; j < 3; j++) {
+            r += listOfhex[i][j];
+            console.log(r);
+        }
+        newSquare.style.backgroundColor = r;
+        r = '#'
+
+        newSquare.addEventListener("click", () => {
+            if (newSquare.style.backgroundColor == rgb.innerHTML) {
+                result.innerHTML = "oooh beee oley beee";
+                newSquare.style.backgroundColor = "white"
+                newSquare.textContent = "YEES!"
+            }
+        });
+    }
+}
 function r_g_b(number) {
 
     for (let i = 0; i < number; i++) {
