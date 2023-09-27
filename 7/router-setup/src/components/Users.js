@@ -11,7 +11,6 @@ import User from "./User";
 function Users() {
     const [loading, setLoading] = useState(true);
     const [users, setUsers] = useState([]);
-    // const { path, url } = useMatch({});
 
     const match = useMatch("/user");
 
@@ -32,7 +31,7 @@ function Users() {
                     {
                         users.map((user) => (
                             <li key={user.id}>
-                                <Link to={`/user/${user.id}`}>{user.name}</Link>
+                                <Link to={`/${match}/${user.id}`}>{user.name}</Link>
                             </li>
                         ))
                     }

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import {
-  Link,
-} from "react-router-dom";
+  useParams,
+  Link
+} from 'react-router-dom';
+import axios from 'axios';
 
 function User() {
   const { id } = useParams();
