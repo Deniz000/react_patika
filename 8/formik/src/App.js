@@ -1,11 +1,11 @@
 import './App.css';
-import { Formik, Field, Form } from 'formik';
-import FormikComp from './FormikComp';
+// import { Formik, Field, Form } from 'formik';
+import SignUpComp from './components/SignUpComp';
 
 function App() {
   return (
     <div className="App"><h1>Sign Up</h1>
-    <FormikComp/>
+    <SignUpComp/>
       {/* <Formik
         initialValues={{
           firstName: '',
