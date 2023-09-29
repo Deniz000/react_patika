@@ -9,11 +9,11 @@ const result = document.getElementById("result");
 
 let lastClickedButton = null;
 
-hard.addEventListener("click", function(event){
+hard.addEventListener("click", function (event) {
     lastClickedButton = event.target;
     resetFunc(6)
 })
-easy.addEventListener("click",  function(event){
+easy.addEventListener("click", function (event) {
     lastClickedButton = event.target;
     resetFunc(3);
 })
@@ -39,15 +39,15 @@ function rn() {
 let hexaValues = [];
 let rgbValues = [];
 
-reset.addEventListener("click", function() {
-    if(lastClickedButton === 'easy') { 
+reset.addEventListener("click", function () {
+    if (lastClickedButton === 'easy') {
         resetFunc(3)
     }
-    else if(lastClickedButton === 'hard') {
+    else if (lastClickedButton === 'hard') {
         resetFunc(6)
     }
 })
-function resetFunc(units){
+function resetFunc(units) {
 
     result.innerHTML = "<span style='font-size:50px;'>&#9203;</span>"
     newRGB(units)
@@ -60,6 +60,9 @@ function resetFunc(units){
         const newSquare = document.createElement("div");
         newSquare.classList.add("square");
         document.body.appendChild(newSquare).style.margin = "2px";
+        if (units == 3)
+            document.createElement('br')
+
 
 
         console.log(i)
