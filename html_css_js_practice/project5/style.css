@@ -1,0 +1,43 @@
+html,
+body {
+    text-align: center;
+    background-color: rgb(194, 193, 236);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-size: 60px;
+    border: 1px solid rgba(188, 255, 224, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    letter-spacing: 4px;
+    background-color: rgba(188, 255, 224, 0.1);
+}
+
+h2 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: rgba(188, 255, 224, 0.7)
+}
+
+p {
+    border: 1px solid rgba(188, 255, 224, 0.3);
+    display: inline;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(188, 255, 224, 0.3);
+}
+
+div.wrapper {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(188, 255, 224, 0.9);
+    border-radius: 10px;
+    position: absolute;
+    left: 20%;
+    top: 40%;
+}
+
+div.wrapper #buttons{
+    padding-top: 10px;
+}
