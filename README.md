@@ -1,4 +1,7 @@
-# React öğreniyorum 
+
+# Düzenleyeceğim..
+
+
 Her klasörün altında öğrendiğim konular için yeni react projeleri oluşturdum. 
 
 - 1 : Giriş
