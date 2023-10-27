@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
-import ThemeContext from '../context/ThemeContext'
+import React from 'react'
+import {useTheme} from '../context/ThemeContext'
 
 
 export default function Header() {
-    const {theme, setTheme} = useContext(ThemeContext)
-
+    const {theme, setTheme} = useTheme()
+    console.log(theme)
     function changeColor(){
         setTheme((color)=> color === 'dark' ? 'light' : 'dark')
     }

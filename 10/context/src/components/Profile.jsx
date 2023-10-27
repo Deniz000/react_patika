@@ -1,8 +1,9 @@
-import { useContext, useState } from 'react'
-import UserContext from '../context/UserContext'
+import {useState } from 'react'
+import {useUser} from '../context/UserContext'
 
 export default function Profile() {
-  const { user, setUser } = useContext(UserContext)
+  const { user, setUser } = useUser()
+
 
 
   const [loading, setLoading] = useState(false)
@@ -25,7 +26,7 @@ export default function Profile() {
     <div>
       {!user &&
         <button onClick={handleLogin} >{loading ? 'loading...' : 'Login'}</button>
-      }
+      } 
 
       <code>{JSON.stringify(user)}</code>
 
