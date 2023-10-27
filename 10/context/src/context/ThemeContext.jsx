@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useMemo } from "react";
 
 const ThemeContext = createContext()
 
@@ -11,10 +11,10 @@ export const ThemeProvider = ({ children }) => {
         localStorage.setItem('theme', theme)
     },[theme])
 
-    const values = {
+    const values = useMemo(() => ({
         theme: theme,
         setTheme: setTheme
-    }
+    }),[theme])
 
     return (
         <ThemeContext.Provider value={values}>
