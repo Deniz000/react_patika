@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Container from './components/Container';
 import { ThemeProvider } from './context/ThemeContext';
@@ -7,12 +7,13 @@ import WeatherComponent from './WeatherApi/WeatherComponent';
 
 function App() {
   return (
-    <WeatherComponent/>
-    // <ThemeProvider>
-    //   <UserProvider>
-    //     <Container />
-    //   </UserProvider>
-    // </ThemeProvider>
+   <> <WeatherComponent/>
+    <ThemeProvider>
+      <UserProvider>
+        <Container />
+      </UserProvider>
+    </ThemeProvider>
+    </>
   );
 }
 

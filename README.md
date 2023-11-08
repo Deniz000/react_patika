@@ -15,4 +15,10 @@ Her klasörün altında öğrendiğim konular için yeni react projeleri oluştu
     - clock 
     - calculater
 - react_camp_resources
-    - react-components-ex
+    - react-components-
+    
+rest of this : 
+context api
+openWheather api
+weather app 
+soe other practices
